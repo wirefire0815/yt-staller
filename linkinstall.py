@@ -18,7 +18,7 @@ class YDL:
         with yt_dlp.YoutubeDL(settings) as ydl:
             error_code = ydl.download(link)
 
-    def getLinksFromFile():
+    def get_links_from_file():
         try:
             with open(r"./links.txt", "r") as links:
                 lines = links.readlines()
