@@ -1,3 +1,3 @@
-videos/*
-links.txt
-__pycache__/*
+server/videos/*
+server/links.txt
+server/__pycache__/*

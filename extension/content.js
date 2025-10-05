@@ -1,4 +1,6 @@
 function createDownloadButton() {
+    // TODO: TWO BUTTONS ARE BEING CREATED
+
     // Avoid creating multiple buttons
     if (document.getElementById('yt-dlp-download-btn')) return;
 
