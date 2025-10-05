@@ -1,24 +1,25 @@
 import yt_dlp
 
 
-class YDL:
+class YtStaller:
 
-    YDL_OPTS = {
-        "format": "mp3/bestaudio/best",
-        "postprocessors": [
-            {
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-            }
-        ],
-        "outtmpl": "./videos/%(title)s.%(ext)s",
-    }
+    def __init__(self):
+        self.YDL_OPTS = {
+            "format": "mp3/bestaudio/best",
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                }
+            ],
+            "outtmpl": "./videos/%(title)s.%(ext)s",
+        }
 
-    def download_video(link, settings):
-        with yt_dlp.YoutubeDL(settings) as ydl:
-            error_code = ydl.download(link)
+    def download_video(self, link):
+        with yt_dlp.YoutubeDL(self.YDL_OPTS) as ydl:
+            error_code = ydl.download([link])
 
-    def get_links_from_file():
+    def get_links_from_file(self):
         try:
             with open(r"./links.txt", "r") as links:
                 lines = links.readlines()
@@ -30,6 +31,6 @@ class YDL:
     def download_from_file(self, urls):
         try:
             for link in urls:
-                self.download_video(link, self.YDL_OPTS)
+                self.download_video(link)
         except IndexError:
             exit
