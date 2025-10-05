@@ -1,2 +1,3 @@
-./videos
-./links.txt
+videos/*
+links.txt
+__pychange__/*
